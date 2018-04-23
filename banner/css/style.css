@@ -1,0 +1,159 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700);
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.banner .photos {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.banner .photos .photo {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center 30%;
+  opacity: 0;
+  transition: opacity 2s;
+}
+.banner .photos .photo.active {
+  opacity: 1;
+}
+.banner .photos .photo:after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .75;
+}
+.banner .grid {
+  display: table;
+  table-layout: fixed;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+  padding: 0 25px 25px;
+  box-sizing: border-box;
+}
+.banner .grid .col {
+  display: table-cell;
+  width: 33.3333%;
+  vertical-align: bottom;
+}
+.banner .info {
+  display: inline-block;
+  position: relative;
+  margin: 25px;
+  opacity: .25;
+  transition: opacity 1s;
+  cursor: pointer;
+  /* * {
+      pointer-events: none;
+    } */
+}
+.banner .info .loader {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  margin: 0 0 30px;
+  background: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  transition: background .5s;
+}
+.banner .info .loader .bar {
+  position: absolute;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+.banner .info .text {
+  margin: 0 0 30px;
+}
+.banner .info .text h1 {
+  margin: 0 0 15px;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1;
+}
+.banner .info .text p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.banner .info .more {
+  height: 0;
+  overflow: hidden;
+  font-weight: 700;
+  transition: height .5s, margin .5s, color .5s;
+}
+.banner .info .more:after {
+  content: '►';
+  display: inline-block;
+  margin-left: 9px;
+  color: #ff0;
+  font-size: 10px;
+  transition: margin .5s;
+}
+.banner .info:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  margin: 30px 0 0;
+  background: rgba(255, 255, 255, 0.3);
+  transition: background .5s;
+}
+.banner .info.active {
+  opacity: 1;
+  transition: opacity .5s;
+}
+.banner .info.active .loader .bar {
+  background: #ff0;
+}
+.banner .info.active .more {
+  height: 52px;
+  margin-top: -15px;
+}
+.banner .info.active:hover .loader {
+  background: #ff0;
+}
+.banner .info.active:hover .more {
+  color: #ff0;
+}
+.banner .info.active:hover .more:after {
+  color: #fff;
+  margin-left: 12px;
+}
+.banner .info.active:hover:after {
+  background: #fff;
+}
